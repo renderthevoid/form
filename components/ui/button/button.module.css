@@ -1,0 +1,64 @@
+
+:root.rdp {
+  --padding: 1rem 1.25rem;
+  --button-bg: transparent;
+  --button-color: var(--alt-txt-color);
+  --button-radius: 0.25rem;
+  --font-size: 1rem;
+} 
+.button {
+
+}
+
+.icon {
+  display: inline-flex;
+  margin-right: 8px; 
+  width: 16px;       
+  height: 16px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 1.75rem;
+  border: 0.0625em solid rgba(18, 19, 19, 0.16);
+	border-radius: 2.5rem;
+
+  cursor: pointer;
+  color: var(--button-color);
+  background-color: var(--button-bg);
+  font-weight: bold;
+  font-family: var(--font-nunito);
+	font-weight: 100;
+  font-size: 1em;
+
+  transition: 300ms ease;
+  text-decoration: none;
+  text-align: center;
+}
+.button:hover {
+  filter: contrast(1.5);
+  transition: 300ms ease;
+}
+
+.button:disabled {
+  background-color: #cccccc; 
+  color: #666666;           
+  cursor: not-allowed;      
+  opacity: 0.7;            
+}
+
+.primary {
+  --button-bg: var(--primary-color);
+  border: 0.0625em solid rgba(18, 19, 19, 0.16);
+	border-radius: 2.5em;
+}
+.outline {
+  --button-bg: var(--secondary-color);
+	border: 0.0625em solid rgba(18, 19, 19, 0.16);
+	border-radius: 2.5em;
+}
+
+
+

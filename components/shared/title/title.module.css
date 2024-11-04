@@ -1,0 +1,23 @@
+
+
+.xl {
+	 font-size: 3em;
+}
+.lg {
+	 font-size: 36px;
+}
+.md {
+	 font-size: 24px;
+}
+.sm {
+	 font-size: 18px;
+}
+.xs {
+	 font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+	.xl {
+		font-size: 2em;
+ }
+}
