@@ -16,12 +16,10 @@ const Pagination: React.FC<PaginationProps> = ({
     const pages = [];
 
     if (totalPages > 1) {
-      // Добавляем первую страницу
       pages.push(1);
     }
 
     if (currentPage > 3) {
-      // Добавляем многоточие, если есть пропущенные страницы
       pages.push("...");
     }
 
@@ -32,12 +30,10 @@ const Pagination: React.FC<PaginationProps> = ({
     }
 
     if (currentPage < totalPages - 2) {
-      // Добавляем многоточие, если есть пропущенные страницы
       pages.push("...");
     }
 
     if (totalPages > 1) {
-      // Добавляем последнюю страницу
       pages.push(totalPages);
     }
 
