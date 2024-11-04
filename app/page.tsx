@@ -121,7 +121,7 @@ export default function Home() {
     setCurrentPage(page);
   };
   const [fields, setFields] = useState(() => {
-    let savedFields: string | undefined = '';
+    let savedFields: string | undefined = "";
     if (typeof window !== "undefined") {
       savedFields = localStorage.getItem("fields") || undefined;
     }
@@ -131,7 +131,7 @@ export default function Home() {
 
       return parsedFields.map((savedField: (typeof initialFields)[number]) => {
         const initialField = initialFields.find(
-          (field) => field.id === savedField.id,
+          (field) => field.id === savedField.id
         );
         return {
           ...savedField,
@@ -145,8 +145,8 @@ export default function Home() {
   });
 
   const resetForm = () => {
-    setFields((prevFields: typeof fields) => {
-      return prevFields.map((field: (typeof fields)[number]) => ({
+    setFields((prevFields: IFields[]) => {
+      return prevFields.map((field: IFields) => ({
         ...field,
         value: "",
       }));
@@ -162,7 +162,7 @@ export default function Home() {
 
   useEffect(() => {
     localStorage.setItem("fields", JSON.stringify(fields));
-    const hasError = fields.some((field: (typeof fields)[number]) => {
+    const hasError = fields.some((field: IFields) => {
       if (field.errorCondition) {
         return field.value.trim() === "" && field.errorCondition(field.value);
       }
@@ -172,16 +172,16 @@ export default function Home() {
   }, [fields]);
 
   const handleValueChange = (id: string, value: string) => {
-    setFields((prevFields: typeof fields) => {
-      return prevFields.map((field: (typeof fields)[number]) =>
-        field.id === id ? { ...field, value } : field,
+    setFields((prevFields: IFields[]) => {
+      return prevFields.map((field: IFields) =>
+        field.id === id ? { ...field, value } : field
       );
     });
   };
 
   const nextStep = () => {
     let result = {};
-    fields.map((field: (typeof fields)[number]) => {
+    fields.map((field: IFields) => {
       result = { ...result, [field.id]: field.value };
     });
     console.log(result);
@@ -232,17 +232,19 @@ export default function Home() {
                   errorMessage={field.errorMessage}
                   reset={reset}
                 />
-              ),
+              )
             )}
           </div>
 
           <div className="form__bottom">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            ></Pagination>
-            <div>
+            <div className="form__bottom-pagination">
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              ></Pagination>
+            </div>
+            <div className="form__bottom-button">
               <Button
                 variant="outline"
                 onClick={nextStep}

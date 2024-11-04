@@ -50,19 +50,26 @@ h1, h2, h3, h4, h5, h6 {
 .form__bottom {
   margin: 100px 0 0;
   display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 200px;
+  justify-content: end; 
+  align-items: center; 
+  width: 100%;
+  gap: 370px;
 }
 
-@media screen and (max-width: 1024px) {
-  .form__body {
-    grid-column-gap: 30px;
+
+@media screen and (max-width: 1440px) {
+  .form__bottom {
+    justify-content: space-between; 
+    gap: 2rem;
+    margin-bottom: 1rem;
   }
+}
+@media screen and (max-width: 1024px) {
+
 }
 @media screen and (max-width: 680px) {
   .wrapper {
-    padding: 3em 0 0;
+    padding: 3rem 0 0;
   }
   .form__top-title {
     width: 100%;
@@ -75,6 +82,12 @@ h1, h2, h3, h4, h5, h6 {
   .form__body {
     margin-top: 2.5rem;
     grid-column-gap: 2rem;
+  }
+  .form__bottom {
+    margin-top: 2.5rem;
+
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media screen and (max-width: 500px) {
