@@ -204,7 +204,7 @@ export default function Home() {
           </div>
 
           <div className="form__body">
-            {fields.map((field) =>
+            {fields.map((field: IFields) =>
               field.options ? (
                 <Select
                   key={field.id}
